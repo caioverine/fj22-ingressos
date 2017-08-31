@@ -80,13 +80,13 @@ public class FilmeController {
     public static void main(String[] args) {
 		
     	List<Filme> filmes = new ArrayList<>();
-    	Filme filme1 = new Filme("duro de matar");
-    	Filme filme2 = new Filme("poiu");
-    	Filme filme3 = new Filme("qwert");
+//    	Filme filme1 = new Filme("duro de matar");
+//    	Filme filme2 = new Filme("poiu");
+//    	Filme filme3 = new Filme("qwert");
     	
-    	filmes.add(filme1);
-    	filmes.add(filme2);
-    	filmes.add(filme3);
+//    	filmes.add(filme1);
+//    	filmes.add(filme2);
+//    	filmes.add(filme3);
     	
 //    	for (Filme filme : filmes) {
 //			System.out.println(filme.getNome());

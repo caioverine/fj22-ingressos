@@ -24,10 +24,10 @@ public class Filme {
 
     }
     
-    public Filme(String nome) {
+    public Filme(String nome, Duration duracao, String genero) {
 		this.nome = nome;
-		//this.duracao = duracao;
-		//this.genero = genero;
+		this.duracao = duracao;
+		this.genero = genero;
 	}
 
 	public Integer getId() {
