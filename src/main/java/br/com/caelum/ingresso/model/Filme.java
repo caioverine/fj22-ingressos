@@ -20,17 +20,14 @@ public class Filme {
     
     
     
-    /**
-     * @deprecated hibernate only
-     */
     public Filme() {
 
     }
     
-    public Filme(String nome, Duration duracao, String genero) {
+    public Filme(String nome) {
 		this.nome = nome;
-		this.duracao = duracao;
-		this.genero = genero;
+		//this.duracao = duracao;
+		//this.genero = genero;
 	}
 
 	public Integer getId() {
