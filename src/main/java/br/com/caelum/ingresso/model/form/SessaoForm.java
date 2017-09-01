@@ -49,7 +49,7 @@ public class SessaoForm {
 	public LocalTime getHorario() {
 		return horario;
 	}
-	public void setHotario(LocalTime horario) {
+	public void setHorario(LocalTime horario) {
 		this.horario = horario;
 	}
 	public Integer getFilmeId() {
