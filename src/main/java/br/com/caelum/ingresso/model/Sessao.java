@@ -38,9 +38,14 @@ public class Sessao {
 		this.preco = sala.getPreco().add(filme.getPreco());
 	}
 	
-	public Map<String, List<Lugar>> getMapaLugares(){
+	public Map<String, List<Lugar>> getMapaDeLugares(){
 		
 		return sala.getMapaDeLugares();
+	}
+	
+	public boolean isDisponivel(Lugar lugar){
+		
+		return true;
 	}
 	public BigDecimal getPreco() {
 		return preco;
