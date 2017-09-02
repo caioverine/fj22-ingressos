@@ -22,6 +22,7 @@ import br.com.caelum.ingresso.dao.SalaDao;
 import br.com.caelum.ingresso.dao.SessaoDao;
 import br.com.caelum.ingresso.model.DetalhesDoFilme;
 import br.com.caelum.ingresso.model.Sessao;
+import br.com.caelum.ingresso.model.descontos.TipoDeIngresso;
 import br.com.caelum.ingresso.model.form.SessaoForm;
 import br.com.caelum.ingresso.rest.ImdbClient;
 
@@ -80,6 +81,7 @@ public class SessaoController {
 		Optional<DetalhesDoFilme> detalhesDoFilme = client.request(sessao.getFilme());
 		modelAndView.addObject("sessao", sessao);
 		modelAndView.addObject("detalhesDoFilme", detalhesDoFilme.orElse(new DetalhesDoFilme()));
+		modelAndView.addObject("tiposDeIngressos", TipoDeIngresso.values());
 		return modelAndView;
 	}
 }

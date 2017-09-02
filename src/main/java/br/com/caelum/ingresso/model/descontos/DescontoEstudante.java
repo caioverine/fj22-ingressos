@@ -11,4 +11,10 @@ public class DescontoEstudante implements Desconto{
 		// TODO Auto-generated method stub
 		return precoOriginal.divide(metade);
 	}
+	
+	@Override
+	public String getDescricao() {
+		// TODO Auto-generated method stub
+		return "Estudante";
+	}
 }
