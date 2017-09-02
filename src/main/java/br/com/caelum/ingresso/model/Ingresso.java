@@ -36,7 +36,12 @@ public class Ingresso {
 		this.preco = this.tipoDeIngresso.aplicaDesconto(sessao.getPreco());
 		this.lugar = lugar;
 	}
-	
+	public Integer getId() {
+		return id;
+	}
+	public TipoDeIngresso getTipoDeIngresso() {
+		return tipoDeIngresso;
+	}
 	public Lugar getLugar() {
 		return lugar;
 	}
@@ -47,5 +52,20 @@ public class Ingresso {
 	
 	public BigDecimal getPreco() {
 		return preco;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public void setLugar(Lugar lugar) {
+		this.lugar = lugar;
+	}
+	public void setPreco(BigDecimal preco) {
+		this.preco = preco;
+	}
+	public void setSessao(Sessao sessao) {
+		this.sessao = sessao;
+	}
+	public void setTipoDeIngresso(TipoDeIngresso tipoDeIngresso) {
+		this.tipoDeIngresso = tipoDeIngresso;
 	}
 }

@@ -15,11 +15,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mysql.fabric.xmlrpc.Client;
-
 import br.com.caelum.ingresso.dao.FilmeDao;
 import br.com.caelum.ingresso.dao.SalaDao;
 import br.com.caelum.ingresso.dao.SessaoDao;
+import br.com.caelum.ingresso.model.Carrinho;
 import br.com.caelum.ingresso.model.DetalhesDoFilme;
 import br.com.caelum.ingresso.model.Sessao;
 import br.com.caelum.ingresso.model.descontos.TipoDeIngresso;
@@ -37,6 +36,8 @@ public class SessaoController {
 	private SessaoDao sessaoDao;
 	@Autowired
 	private ImdbClient client;
+	@Autowired
+	private Carrinho carrinho;
 	
 	@GetMapping("/admin/sessao")
 	public ModelAndView form(@RequestParam("salaId") Integer salaId, SessaoForm form){
@@ -80,6 +81,7 @@ public class SessaoController {
 		Sessao sessao = sessaoDao.findOne(sessaoId);
 		Optional<DetalhesDoFilme> detalhesDoFilme = client.request(sessao.getFilme());
 		modelAndView.addObject("sessao", sessao);
+		modelAndView.addObject("carrinho", carrinho);
 		modelAndView.addObject("detalhesDoFilme", detalhesDoFilme.orElse(new DetalhesDoFilme()));
 		modelAndView.addObject("tiposDeIngressos", TipoDeIngresso.values());
 		return modelAndView;
