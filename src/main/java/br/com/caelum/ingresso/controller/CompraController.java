@@ -1,6 +1,5 @@
 package br.com.caelum.ingresso.controller;
 
-import javax.naming.Binding;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import br.com.caelum.ingresso.dao.CompraDao;
 import br.com.caelum.ingresso.dao.LugarDao;
 import br.com.caelum.ingresso.dao.SessaoDao;
 import br.com.caelum.ingresso.model.Carrinho;
@@ -26,6 +26,8 @@ public class CompraController {
 	private LugarDao lugarDao;
 	@Autowired
 	private Carrinho carrinho;
+	@Autowired
+	private CompraDao compraDao;
 	
 	@PostMapping("/compra/ingressos")
 	public ModelAndView enviarParaPagamento(CarrinhoForm carrinhoForm){

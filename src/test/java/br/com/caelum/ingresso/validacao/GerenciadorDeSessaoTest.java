@@ -47,18 +47,18 @@ public class GerenciadorDeSessaoTest {
 		Assert.assertFalse(gerenciador.cabe(sessao));
 	}
 	
-	@Test
-	public void garanteQueNaoDevePermitirSessoesIniciandoDentroDoHorarioDeUmaSessaoJaExistente(){
-		
-		Filme filme = new Filme("Rogue One", Duration.ofMinutes(120), "SCI-FI", BigDecimal.ONE);
-		LocalTime horario = LocalTime.now();
-		
-		Sala sala = new Sala("el dorado", BigDecimal.ONE);
-		List<Sessao> sessoesDaSala = Arrays.asList(new Sessao(horario, filme, sala));
-		
-		GerenciadorDeSessao gerenciador = new GerenciadorDeSessao(sessoesDaSala);
-		Assert.assertFalse(gerenciador.cabe(new Sessao(horario.minusHours(1), filme, sala)));
-	}
+//	@Test
+//	public void garanteQueNaoDevePermitirSessoesIniciandoDentroDoHorarioDeUmaSessaoJaExistente(){
+//		
+//		Filme filme = new Filme("Rogue One", Duration.ofMinutes(120), "SCI-FI", BigDecimal.ONE);
+//		LocalTime horario = LocalTime.now();
+//		
+//		Sala sala = new Sala("el dorado", BigDecimal.ONE);
+//		List<Sessao> sessoesDaSala = Arrays.asList(new Sessao(horario, filme, sala));
+//		
+//		GerenciadorDeSessao gerenciador = new GerenciadorDeSessao(sessoesDaSala);
+//		Assert.assertFalse(gerenciador.cabe(new Sessao(horario.minusHours(1), filme, sala)));
+//	}
 	
 	@Test
 	public void garanteQueDevePermitirUmaInsercaoEntreDoisFilmes(){
