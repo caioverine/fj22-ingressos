@@ -80,8 +80,8 @@ public class Sessao {
 		return horario;
 	}
 
-	public void setHorario(String horario) {
-		this.horario = LocalTime.parse(horario);
+	public void setHorario(LocalTime horario) {
+		this.horario = horario;
 	}
 
 	public Sala getSala() {

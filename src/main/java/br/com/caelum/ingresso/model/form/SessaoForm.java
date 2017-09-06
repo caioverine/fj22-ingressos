@@ -49,8 +49,8 @@ public class SessaoForm {
 	public LocalTime getHorario() {
 		return horario;
 	}
-	public void setHorario(LocalTime horario) {
-		this.horario = horario;
+	public void setHorario(String horario) {
+		this.horario = LocalTime.parse(horario);
 	}
 	public Integer getFilmeId() {
 		return filmeId;
